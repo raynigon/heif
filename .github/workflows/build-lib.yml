@@ -25,4 +25,10 @@ jobs:
         arguments: build
         gradle-version: 6.5
         build-root-directory: build/java-desktop
- 
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: "Java Library"
+        # Directory containing files to upload
+        path: build/java-desktop/build/
