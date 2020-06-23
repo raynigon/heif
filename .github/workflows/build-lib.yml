@@ -14,16 +14,5 @@ jobs:
     - name: Run CMake
       uses: lukka/run-cmake@v2
       with:
-        buildWithCMakeArgs: '--help'
         buildDirectory: '${{ github.workspace }}/build/'
         cmakeListsTxtPath: '${{ github.workspace }}/srcs/CMakeLists.txt'
-    - name: show generators
-      run: cmake --help
-      working-directory: heif/build
-    - name: configure
-      run: cmake ../srcs -G"<Generator listed by above command for your target platform>"
-      working-directory: heif/build
-    - name: build
-      run: cmake --build .
-      working-directory: heif/build
-
