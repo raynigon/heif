@@ -25,7 +25,7 @@ jobs:
       uses: eskatos/gradle-command-action@v1.3.2
       continue-on-error: true
       with:
-        arguments: test
+        arguments: test -i
         gradle-version: 6.5
         build-root-directory: build/java-desktop
     - name: "Check files"
