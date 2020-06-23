@@ -15,7 +15,8 @@ jobs:
       uses: lukka/run-cmake@v2
       with:
         buildWithCMakeArgs: '--help'
-        buildDirectory: '${{ runner.workspace }}/heif/build/'
+        buildDirectory: '${{ github.workspace }}/build/'
+        cmakeListsTxtPath: '${{ github.workspace }}/srcs/CMakeLists.txt'
     - name: show generators
       run: cmake --help
       working-directory: heif/build
