@@ -27,7 +27,7 @@ dependencies {
 }
 
 task copyJniLib(type: Copy) {
-    from '../lib/libheifjni.dylib'
+    from '../lib/libheifjni.dylib', '../lib/libheifjni.so', '../lib/libheifjni.dll'
     into '.'
 }
 
