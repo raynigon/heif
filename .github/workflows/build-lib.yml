@@ -22,7 +22,7 @@ jobs:
     - name: Build Java Library
       uses: eskatos/gradle-command-action@v1.3.2
       with:
-        arguments: build
+        arguments: test
         gradle-version: 6.5
         build-root-directory: build/java-desktop
     - name: Upload artifact

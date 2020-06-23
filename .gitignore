@@ -1,28 +1,5 @@
-Bins/
-CMakeCache.txt
-CMakeFiles
-Makefile
-cmake_install.cmake
+# Ignore Gradle project-specific cache directory
+.gradle
 
-# Linux
-*.a
-
-# Windows
-*.exe
-.project
-.vscode/
-
-*.bak
-*~
-
-*.gcov
-
-*.heic
-*_info.xml
-
-# IDE files
-*.user
-
-# MacOS
-.DS_Store
-.idea/
+# Ignore Intellij
+.idea
