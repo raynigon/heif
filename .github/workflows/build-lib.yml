@@ -11,8 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run CMake
+    - uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: Build C++ Library
       uses: lukka/run-cmake@v2
       with:
         buildDirectory: '${{ github.workspace }}/build/'
         cmakeListsTxtPath: '${{ github.workspace }}/srcs/CMakeLists.txt'
+    - name: Build Java Library
+      uses: eskatos/gradle-command-action@v1.3.2
+      with:
+        arguments: build
+        build-root-directory: build/java-desktop
+ 
