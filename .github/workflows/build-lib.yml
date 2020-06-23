@@ -19,6 +19,8 @@ jobs:
       with:
         buildDirectory: '${{ github.workspace }}/build/'
         cmakeListsTxtPath: '${{ github.workspace }}/srcs/CMakeLists.txt'
+    - name: "Check files"
+      run: ls -lisa build/lib
     - name: Build Java Library
       uses: eskatos/gradle-command-action@v1.3.2
       with:

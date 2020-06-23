@@ -27,11 +27,11 @@ dependencies {
 }
 
 task copyJniLib(type: Copy) {
-    from("../lib/") {
+    from("$projectDir/../lib/") {
         include "libheifjni.*"
     }
     into '.'
-
+    print("TZUIO: $projectDir")
 }
 
 tasks.getByName("test").dependsOn = [tasks.getByName("copyJniLib")]
