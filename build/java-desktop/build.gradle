@@ -27,8 +27,11 @@ dependencies {
 }
 
 task copyJniLib(type: Copy) {
-    from '../lib/libheifjni.dylib', '../lib/libheifjni.so', '../lib/libheifjni.dll'
+    from("../lib/") {
+        include "libheifjni.*"
+    }
     into '.'
+
 }
 
 tasks.getByName("test").dependsOn = [tasks.getByName("copyJniLib")]
