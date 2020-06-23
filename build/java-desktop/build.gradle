@@ -26,15 +26,20 @@ dependencies {
     testCompile 'junit:junit:4.8.2'
 }
 
+task myPrebuildTask(type: Exec) {
+    print("TZUIO: $projectDir")
+    workingDir "$projectDir"
+    commandLine 'ls', '-lisa'
+}
+
 task copyJniLib(type: Copy) {
     from("$projectDir/../lib/") {
         include "libheifjni.*"
     }
     into '.'
-    print("TZUIO: $projectDir")
 }
 
-tasks.getByName("test").dependsOn = [tasks.getByName("copyJniLib")]
+tasks.getByName("test").dependsOn = [tasks.getByName("copyJniLib"), tasks.getByName("myPrebuildTask")]
 
 def projectDir = getProjectDir().absolutePath
 def rootPath = file(projectDir + "/../../").path
