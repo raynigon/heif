@@ -30,7 +30,7 @@ task copyJniLib(type: Copy) {
     from("$projectDir/../lib/") {
         include "libheifjni.*"
     }
-    into '.'
+    into "$projectDir/build/ext/"
 }
 
 tasks.getByName("test").dependsOn = [tasks.getByName("copyJniLib")]

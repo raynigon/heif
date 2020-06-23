@@ -25,11 +25,11 @@ jobs:
       uses: eskatos/gradle-command-action@v1.3.2
       continue-on-error: true
       with:
-        arguments: test -i
+        arguments: test -i -Djava.library.path="${{ github.workspace }}/build/java-desktop/build/ext/"
         gradle-version: 6.5
         build-root-directory: build/java-desktop
     - name: "Check files"
-      run: ls -lisa build/java-desktop
+      run: ls -lisa build/java-desktop/build/ext/
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
